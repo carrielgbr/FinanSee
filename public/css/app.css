@@ -5,7 +5,7 @@
     margin: 0;
     text-align: center;
     align-items: center;
-    margin-top: 3%;
+    margin-top: 2.1%;
 }
 
 
@@ -14,37 +14,76 @@ body{
 }
 
 h1{
-    margin-left: -2.5%;
+    /*margin-left: -2.5%;*/
     font-family: 'Poppins', sans-serif;
     font-size: 420%;
 }
 
 p{
     font-family: 'Poppins', sans-serif;
+    font-size: 164%;
+    margin: 0 0 15% 0;
 }
 
-form{
-    border: 35%;
-    color: darkcyan;    
+#login_cad{
+    align-items: center;
+    font-weight: bolder;
+}
+
+form{  
     background-color: aliceblue;
-    width: 11%;
+    width: 13.5%;
     height: 60%;
     margin-left: 40%;
-    margin-top: 5%;
     font-family: 'Poppins', sans-serif;
-    border-radius: 12%;
+    font-weight: bolder;
+    border-radius: 10.5%;
     text-align: center;
     padding: 3%;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
-input{
+input[type="email"]{
+    width: 100%;
     font-family: 'Poppins', sans-serif;
     cursor: auto;
+    margin: 0 0 6% 0;
 }
 
+input[type="password"]{
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+    cursor: auto;
+    margin: 0 auto;
+    margin: 0 0 6% 0 ;
+}
+
+input[type="submit"]{
+    width: 35%;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    margin: 0 0 6% 0;
+}
+
+/*.textBox{
+    
+}*/
+
 input:active{
-    background-color: #f5ea50;
+    background-color: azure;
+}
+
+.link_page{
+    background-color: #4CAF50;
+    color: #FFFFFF;
+    text-decoration: none;
+    border-radius: 12% ;
+    
+}
+
+.login{
+    background-color: #3F87A6;
+    border-radius: 12%;
 }
 
 
@@ -57,11 +96,10 @@ input:active{
 
 }
 
-@media only screen and (max-device-width: 00px) {
+@media only screen and (max-device-width: 900px) {
     form { 
         width:40%; 
         text-align: center;
         margin-left: 30% ;
     }
-
 }

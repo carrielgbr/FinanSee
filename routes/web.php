@@ -22,6 +22,7 @@ Route::get('cadastrar', function () {
     return view('Screen-Register');
 });
 
+
 /*Route::get('home',function (){
     return view('home');
 });*/
