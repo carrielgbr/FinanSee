@@ -14,9 +14,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('Screen-Home');
 });
 
-Route::get('home',function (){
-    return view('home');
+
+Route::get('cadastrar', function () {
+    return view('Screen-Register');
 });
+
+/*Route::get('home',function (){
+    return view('home');
+});*/
