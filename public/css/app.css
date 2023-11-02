@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,200&display=swap');
+
+*{
+    border: 0;
+    margin: 0;
+    text-align: center;
+    align-items: center;
+    margin-top: 3%;
+}
+
+
+body{
+    background-color: #63A6B2;
+}
+
+h1{
+    margin-left: -2.5%;
+    font-family: 'Poppins', sans-serif;
+    font-size: 420%;
+}
+
+p{
+    font-family: 'Poppins', sans-serif;
+}
+
+form{
+    border: 35%;
+    color: darkcyan;    
+    background-color: aliceblue;
+    width: 11%;
+    height: 60%;
+    margin-left: 40%;
+    margin-top: 5%;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 12%;
+    text-align: center;
+    padding: 3%;
+    justify-content: space-around;
+}
+
+input{
+    font-family: 'Poppins', sans-serif;
+    cursor: auto;
+}
+
+input:active{
+    background-color: #f5ea50;
+}
+
+
+@media only screen and (max-device-width: 700px) {
+    form { 
+        width:40%; 
+        text-align: center;
+        margin-left: 30% ;
+    }
+
+}
+
+@media only screen and (max-device-width: 00px) {
+    form { 
+        width:40%; 
+        text-align: center;
+        margin-left: 30% ;
+    }
+
+}
