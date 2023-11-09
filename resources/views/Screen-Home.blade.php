@@ -13,16 +13,17 @@
         <body>
             <header id="titulo">
                 <h1>FinanSee</h1>
-            </headr>
+            </header>
             <section class="login_cad">
-                <form action="" method="get">
+                <form action="{{ route('login.post') }}" method="POST">
+                    @csrf 
                     <P>LOGIN</P>
                     <div class="textBox">
-                        <input type="email" name="" id="" placeholder="E-MAIL">
-                        <input type="password" name="" id="" placeholder="SENHA">
+                        <input type="email" name="email" id="email" placeholder="E-MAIL" required maxlength="100">
+                        <input type="password" name="password" id="password" placeholder="SENHA" required maxlength="60">
                     </div>
-                    <input type="submit" value="LOGIN" class="login"><br>
-                    <a href="" class="link_page" >Cadastrar</a>
+                    <input type="submit" name="login" value="LOGIN" class="login"><br>
+                    <a href="{{ route('register') }}" class="link_page_cadastro" >Cadastrar</a>
                 </form>
             </section>
         </body>

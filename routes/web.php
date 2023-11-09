@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthenticationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,15 +15,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('Screen-Home');
+    return view('Screen-Home', [
+        "errorLogin" => false
+    ]);
+})->name('home');
+
+Route::post('/', [AuthenticationController::class, 'authenticate'])->name('login.post');
+
+Route::get('/cadastrar', [AuthenticationController::class, 'registerIndex'])->name('register');
+Route::post('/cadastrar', [AuthenticationController::class, 'create'])->name('register.post');
+
+Route::get('finansee', function (){
+    return view ('Screen-FinanSee');
 });
-
-
-Route::get('cadastrar', function () {
-    return view('Screen-Register');
-});
-
-
-/*Route::get('home',function (){
-    return view('home');
-});*/
