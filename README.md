@@ -2,6 +2,18 @@
 
 para poder rodar rodar essa aplicação
 
+use o camando a seguir:
+
+composer install 
+
+se o comando acima nao funcionar 
+
+use:
+
+composer update
+
+como ultima opção
+
 composer update --ignore-platform-reqs
 
 logo apos 
