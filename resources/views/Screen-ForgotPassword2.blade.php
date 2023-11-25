@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/signon-FinanSee.css">
+    <link rel="stylesheet" href="login-FinanSee.css">
     <title>FinanSee</title>
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="Image/favicon-32x32.png">
@@ -16,16 +16,11 @@
             <div class="logo">
                 Finan<span class="span-logo">See<span>
             </div>
-            <form action="{{route('register.post')}}" method="post" class="preencher_dados">
-                @csrf
+            <form action="" class="preencher_dados">
                  <input class="text" name="" value="" placeholder="Login">
                  <input class="number" name="" value="" placeholder="Senha">
-                 <input class="number" name="" value="" placeholder="Confirmar senha">
-                 <input type="submit" value="Cadastrar" class="submit">
-                 <a href="{{ route('login.post') }}" class="login">Já tem uma conta?</a>
-                 
-            </form>
+                 <input class="number" name="" value="" placeholder="Nova senha">
+                 <button class="submit">Confirmar</button>
+             </form>
         </div>
     </div>
-</body>
-</html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/signon-FinanSee.css">
+    <link rel="stylesheet" href="forgotpass-FinanSee.css">
     <title>FinanSee</title>
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="Image/favicon-32x32.png">
@@ -16,16 +16,12 @@
             <div class="logo">
                 Finan<span class="span-logo">See<span>
             </div>
-            <form action="{{route('register.post')}}" method="post" class="preencher_dados">
-                @csrf
-                 <input class="text" name="" value="" placeholder="Login">
-                 <input class="number" name="" value="" placeholder="Senha">
-                 <input class="number" name="" value="" placeholder="Confirmar senha">
-                 <input type="submit" value="Cadastrar" class="submit">
-                 <a href="{{ route('login.post') }}" class="login">Já tem uma conta?</a>
-                 
-            </form>
+            <form action="" class="preencher_dados">
+                 <h3>Esqueceu sua senha?</h3> 
+                 <h5>Insira seu email abaixo que te enviaremos um link de recuperação!</h5>
+                 <input class="text" name="" value="" placeholder="Seu email cadastrado">
+                 <button class="submit">Enviar link</button>
+                 <button class="sign-on">Enviar novamente</button>
+             </form>
         </div>
     </div>
-</body>
-</html>

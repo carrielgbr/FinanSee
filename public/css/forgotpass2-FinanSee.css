@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Ephesis&family=Libre+Baskerville&family=Lora&family=Open+Sans:wght@300;400;500;700;800&family=Outfit:wght@200;400;700&family=Poppins:wght@300;400;500;600;700;800;900&family=Roboto&display=swap');
+*{
+    border: 0 0 0 0;
+    margin: 0 0 0 0;
+    text-align: center;
+    align-items: center;
+    max-width: 100%;
+    max-height: 100%;
+    
+}
+
+header{
+    display: flex;
+    flex-direction: row;
+    border-color: gray;
+    border-style: inherit;
+    height: 22vh;
+    align-items:center;
+    justify-content: center;
+}
+body{
+    display: flex;
+    justify-content: center;
+    background: rgb(9,9,121);
+    background: linear-gradient(90deg, rgb(17, 0, 255) 1%, rgba(9,9,121,1) 100%);
+}
+
+.login-section{
+    display: flex;
+    justify-content: center;
+    margin-top: 15vh;
+}
+    .caixa{
+        display: flex;
+        flex-direction: column;
+        justify-content: top;
+        background-color: white;
+        border-radius: 12px;
+        height: 75vh;
+    }
+        .logo{
+            display: flex;
+            justify-content: center;
+            font-family: 'Poppins', sans-serif;
+            font-style: italic;
+            font-weight: 700;
+            font-size: 50px;
+            cursor: pointer;
+            margin-top: 30px;
+            margin-inline: 70px;
+        }
+            .span-logo{
+                font-family: 'Ephesis', sans-serif;
+                font-size: 120%;
+                color: blue;
+            }
+        .preencher_dados{
+            display: flex;
+            flex-direction: column;
+            background-color: transparent;
+            justify-content: center;
+            width: 100%;
+        }
+            .preencher_dados input{
+                margin-top: 30px;
+                height: 28px;
+                width: 70%;
+                border-radius: 12px;
+                border-style: hidden;
+                background-color: rgb(219, 219, 219);
+            }
+            .submit{
+                background-color: blue;
+                font-family: 'Poppins';
+                font-size: 16px;
+                font-weight: 600;
+                color: white;
+                border-radius: 12px;
+                height: 32px;
+                width: 70%;
+                border-color: rgb(87, 87, 87);
+                border-style:hidden;
+                cursor: pointer;
+                margin-top: 20px;
+                margin-bottom: 15px;
+            }
+                .submit:hover{
+                        background-color: rgb(0, 0, 218);
+                    }
+            .sign-on{
+                background-color: transparent;
+                border: none;
+                padding: 25px;
+                color: rgb(167, 0, 167);
+                height: 32px;
+                width: 100%;
+                margin-top: -15px;
+                cursor: pointer;
+            }
+                .sign-on:hover{
+                    color: rgb(82, 1, 82);
+                }
+            
+            .forgotpass{
+                background-color: transparent;
+                border: none;
+                color: rgb(148, 148, 148);
+                width: 100%;
+                cursor: pointer;
+                text-align: right;
+                padding-top: 5px;
+                padding-right: 55px;
+            }
+                .forgotpass:hover{
+                    color: rgb(82, 1, 82);
+                }
+            h3{
+                font-family: 'Poppins';
+            }
