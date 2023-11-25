@@ -17,4 +17,9 @@ class ControllerFinanSee extends Controller {
 
         return view('Screen-FinanSee', compact('dados'));
     }
+
+    public function index () {
+
+        return view('Screen-FinanSee');
+    }
 }

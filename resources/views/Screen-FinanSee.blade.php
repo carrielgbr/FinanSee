@@ -34,6 +34,15 @@
     <div class="result-section">
         <div class="result-box">
             <div class="result">
+
+            <div class="ls-custom-select">
+                <select name="" class="ls-select">
+                    <option>Selecione</option>
+                    <option>Ganhos</option>
+                    <option>Perdas</option>
+                </select>
+            </div>
+
                 <div class="result-gasto">
                     <h4>Salgadinho Doritos Sabor Queijo Nacho 300g</h4>
                 </div>
@@ -66,25 +75,6 @@
             </div>
         </div>
         <div >
-            <script type="text/javascript">
-                google.charts.load('current', {'packages':['corechart']});
-                google.charts.setOnLoadCallback(desenharGrafico);
-
-                function desenharGrafico() {
-                    var data = google.visualization.arrayToDataTable(@json($dados));
-
-                    // Imprime os dados no console para depuração
-                    console.log(data);
-
-                    var options = {
-                        title: 'My Daily Activities',
-                        is3D: true,
-                    };
-
-                    var chart = new google.visualization.ComboChart(document.getElementById('grafico'));
-                    chart.draw(data, options);
-                }
-            </script>
     </div>
     </body>
 </html>

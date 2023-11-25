@@ -6,6 +6,7 @@ use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Middleware\Authenticate;
 use Illuminate\Auth\Events\Login;
 use App\Http\Controllers\ControllerFinanSee;
+use App\Http\Controllers\ForgotPassword;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,5 +33,9 @@ Route::get('/cadastrar', [AuthenticationController::class, 'registerIndex'])->na
 Route::post('/cadastrar', [AuthenticationController::class, 'create'])->name('register.post');
 
 
-Route::get('/esqueceuasenha', [AuthenticationController::class, 'forgotpassword'])->name('ForgotPassword');
-Route::post('/esqueceuasenha', [AuthenticationController::class, 'forgot'])->name('ForgotPassword.post');
+Route::get('/finansee', [ControllerFinanSee::class, 'index'])->name('finansee.index')->middleware('auth');
+Route::get('/finansee/grafico', [ControllerFinanSee::class, 'exibirGrafico'])->name('finansee.grafico');
+
+//testando rotas de senha
+Route::get('/esqueceuasenha', [ForgotPassword::class, 'ScreenForgotPassword'])->name('ForgotPassword.get');
+Route::post('/esqueceuasenha', [ForgotPassword::class, 'forgot'])->name('ForgotPassword.post');
