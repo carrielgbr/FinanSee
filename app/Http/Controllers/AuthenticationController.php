@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -39,6 +40,11 @@ class AuthenticationController extends Controller
         
     }
 
+    public function logout (Request $request) {
+        auth()->logout();
+        return $this->loginIndex();
+    }
+
     public function registerIndex() {
         
         return view('Screen-Register', [
@@ -71,7 +77,8 @@ class AuthenticationController extends Controller
             }
         }
         catch (Exception $e){ }
-        $this->$created = false;
+        
+        $this->created = false;
         return $this->registerIndex();
     }
 }

@@ -17,9 +17,7 @@ return new class extends Migration
             $table->double('value');
             $table->text('description');
             $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('gains_categories_id');
             $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('gains_categories_id')->references('id')->on('gains_categories');
         });
     }
 

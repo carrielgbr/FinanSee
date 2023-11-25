@@ -17,8 +17,6 @@ return new class extends Migration
             $table->double('value');
             $table->text('description');
             $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('spend_categories_id');
-            $table->foreign('spend_categories_id')->references('id')->on('spend_categories');
             $table->foreign('user_id')->references('id')->on('users');
         });
     }
