@@ -1,14 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="initial.css">
+    <link rel="stylesheet" href="css/initial.css">
     <title>FinanSee</title>
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="Image/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="Image/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
 </head>
 <body>
     <header>
@@ -21,40 +22,12 @@
                 <input type="submit" name="enviar" value="Sair"></li>
             </form>
         </div>
-        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-      google.charts.load('current', {'packages':['corechart']});
-      google.charts.setOnLoadCallback(drawVisualization);
-
-      function drawVisualization() {
-        // Some raw data (not necessarily accurate)
-        var data = google.visualization.arrayToDataTable([
-          ['Month', 'Bolivia', 'Ecuador', 'Madagascar', 'Papua New Guinea', 'Rwanda', 'Average'],
-          ['2004/05',  165,      938,         522,             998,           450,      614.6],
-          ['2005/06',  135,      1120,        599,             1268,          288,      682],
-          ['2006/07',  157,      1167,        587,             807,           397,      623],
-          ['2007/08',  139,      1110,        615,             968,           215,      609.4],
-          ['2008/09',  136,      691,         629,             1026,          366,      569.6]
-        ]);
-
-        var options = {
-          title : 'Monthly Coffee Production by Country',
-          vAxis: {title: 'Cups'},
-          hAxis: {title: 'Month'},
-          seriesType: 'bars',
-          series: {5: {type: 'line'}}
-        };
-
-        var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
-        chart.draw(data, options);
-      }
-    </script>
     </header>
     <div class="caixa">
             <form action="" class="preencher_dados">
-                <input class="text" name="" value="" placeholder="Gasto">
-                <input class="number" name="" value="" placeholder="Valor">
-                <input class="date" name="" value="" placeholder="Data">
+                <input class="text" name="Description" value="" placeholder="Descrição">
+                <input class="number" name="Value" value="" placeholder="Valor">
+                <input type="date" class="date" name="Date" value="" placeholder="Data">
                 <button class="submit">Inserir</button>
             </form>
         </div>
@@ -83,12 +56,22 @@
             
         </div>
     </div>
-    
-    <div class="chart-section">
-        <div class="chart-box">
-            <div class="chart" id="chart_div">
+        <!--teste grafico Kayky-->
+        <div class="chart-section">
+            <div class="chart-box"> 
+                <div class="chart"> 
+                    <div id="grafico">
+                    </div>
+                </div>
             </div>
         </div>
+        <div >
+            <script type="text/javascript">
+                google.charts.load('current', {'packages':['corechart']});
+                google.charts.setOnLoadCallback(desenharGrafico);
+
+                
+            </script>
     </div>
-</body>
+    </body>
 </html>
