@@ -28,8 +28,7 @@ class AuthenticationController extends Controller
         ]);
 
         if(auth()->attempt(request()->only(['email', 'password']))) {
-            //return view('Screen-FinanSee');
-            return redirect()->route('finansee.index');
+            return view('Screen-FinanSee');
         } else {
             $this->auth = false;
         }
