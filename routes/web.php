@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthenticationController;
 
 
 use App\Http\Controllers\Auth\ForgotPasswordController;
@@ -39,11 +40,11 @@ Route::get('/', function () {
     return view('Screen-Home');
 });
 
+Route::post('/', [AuthenticationController::class, 'authenticate'])->name('login.post');
 
-Route::get('cadastrar', function () {
-    return view('Screen-Register');
-});
+Route::get('/cadastrar', [AuthenticationController::class, 'registerIndex'])->name('register');
+Route::post('/cadastrar', [AuthenticationController::class, 'create'])->name('register.post');
 
-Route::get('FinanSee', function (){
+Route::get('finansee', function (){
     return view ('Screen-FinanSee');
 });
