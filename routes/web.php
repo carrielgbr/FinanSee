@@ -6,6 +6,7 @@ use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\ControllerFinanSee;
 use App\Http\Middleware\Authenticate;
 use Illuminate\Auth\Events\Login;
+use App\Http\Controllers\ControllerFinanSee;
 
 /*
 |--------------------------------------------------------------------------

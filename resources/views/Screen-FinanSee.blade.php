@@ -70,7 +70,20 @@
                 google.charts.load('current', {'packages':['corechart']});
                 google.charts.setOnLoadCallback(desenharGrafico);
 
-                
+                function desenharGrafico() {
+                    var data = google.visualization.arrayToDataTable(@json($dados));
+
+                    // Imprime os dados no console para depuração
+                    console.log(data);
+
+                    var options = {
+                        title: 'My Daily Activities',
+                        is3D: true,
+                    };
+
+                    var chart = new google.visualization.ComboChart(document.getElementById('grafico'));
+                    chart.draw(data, options);
+                }
             </script>
     </div>
     </body>
