@@ -16,13 +16,17 @@
             <div class="logo">
                 Finan<span class="span-logo">See<span>
             </div>
-            <form action="{{route('register.post')}}" method="post" class="preencher_dados">
+            <form action="{{ route('register.post') }}" method="post" class="preencher_dados">
                 @csrf
-                 <input class="text" name="email" value="" placeholder="email">
-                 <input class="number" name="password" value="" placeholder="Senha">
-                 <input class="number" name="" value="" placeholder="Confirmar senha">
-                 <input type="submit" value="Cadastrar" class="submit">
-                 <a href="{{ route('login.post') }}" class="login">Já tem uma conta?</a>
+                <input type="email" class="text" name="email" placeholder="Login" maxlength="100" required>
+                <input type="password" class="number" name="password" placeholder="Senha" maxlength="60" required>
+                <input type="password" class="number" name="passwordConfirm" placeholder="Confirmar senha" required>
+
+                <input type="submit" value="Cadastrar" class="submit">
+                @if($created === false)
+                    <p>Ocorreu um problema ao </p>
+                @endif
+                <a href="{{ route('login.get') }}" class="login">Já tem uma conta?</a>
             </form>
         </div>
     </div>
