@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="forgotpass-FinanSee.css">
+    <link rel="stylesheet" href="css/forgotpass-FinanSee.css">
     <title>FinanSee</title>
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="Image/favicon-32x32.png">
@@ -16,10 +16,13 @@
             <div class="logo">
                 Finan<span class="span-logo">See<span>
             </div>
-            <form action="" class="preencher_dados">
+            <form action="{{route('ForgotPassword.post')}}" class="preencher_dados">
+                @csrf
                  <h3>Esqueceu sua senha?</h3> 
+
                  <h5>Insira seu email abaixo que te enviaremos um link de recuperação!</h5>
-                 <input class="text" name="" value="" placeholder="Seu email cadastrado">
+
+                 <input type="email" class="text" name="email" value="" placeholder="Seu email cadastrado">
                  <button class="submit">Enviar link</button>
                  <button class="sign-on">Enviar novamente</button>
              </form>
