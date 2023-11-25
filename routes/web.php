@@ -26,7 +26,7 @@ Route::get('/', function () {
 })->name('home');
 
 
-//Route::get('/',[AuthenticationController::class, 'authenticate'])->name('login.get');
+Route::get('/',[AuthenticationController::class, 'loginIndex'])->name('login.get');
 Route::post('/', [AuthenticationController::class, 'authenticate'])->name('login.post');
 
 Route::get('/cadastrar', [AuthenticationController::class, 'registerIndex'])->name('register.get');
@@ -35,16 +35,3 @@ Route::post('/cadastrar', [AuthenticationController::class, 'create'])->name('re
 
 Route::get('/esqueceuasenha', [AuthenticationController::class, 'forgotpassword'])->name('ForgotPassword');
 Route::post('/esqueceuasenha', [AuthenticationController::class, 'forgot'])->name('ForgotPassword.post');
-
-Route::get('/', function () {
-    return view('Screen-Home');
-});
-
-Route::post('/', [AuthenticationController::class, 'authenticate'])->name('login.post');
-
-Route::get('/cadastrar', [AuthenticationController::class, 'registerIndex'])->name('register');
-Route::post('/cadastrar', [AuthenticationController::class, 'create'])->name('register.post');
-
-Route::get('finansee', function (){
-    return view ('Screen-FinanSee');
-});
