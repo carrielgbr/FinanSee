@@ -2,11 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthenticationController;
-
-
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Middleware\Authenticate;
 use Illuminate\Auth\Events\Login;
+use App\Http\Controllers\ControllerFinanSee;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,6 +44,9 @@ Route::post('/', [AuthenticationController::class, 'authenticate'])->name('login
 Route::get('/cadastrar', [AuthenticationController::class, 'registerIndex'])->name('register');
 Route::post('/cadastrar', [AuthenticationController::class, 'create'])->name('register.post');
 
-Route::get('finansee', function (){
+Route::get('/finansee', function (){
     return view ('Screen-FinanSee');
 });
+
+//teste grafico 
+Route::get('/finansee', [ControllerFinanSee::class, 'exibirGrafico']);

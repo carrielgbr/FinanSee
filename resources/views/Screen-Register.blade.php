@@ -18,12 +18,11 @@
             </div>
             <form action="{{route('register.post')}}" method="post" class="preencher_dados">
                 @csrf
-                 <input class="text" name="" value="" placeholder="Login">
-                 <input class="number" name="" value="" placeholder="Senha">
+                 <input class="text" name="email" value="" placeholder="email">
+                 <input class="number" name="password" value="" placeholder="Senha">
                  <input class="number" name="" value="" placeholder="Confirmar senha">
                  <input type="submit" value="Cadastrar" class="submit">
                  <a href="{{ route('login.post') }}" class="login">Já tem uma conta?</a>
-                 
             </form>
         </div>
     </div>
