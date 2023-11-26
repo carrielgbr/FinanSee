@@ -63,11 +63,10 @@
                         <button class="refresh-btn">
                             <h4>Atualizar</h4>
                         </button>
-
                         <form action="{{ route('finansee.destroy') }}" method="post">
                             @csrf
                             <input type="hidden" name="id" value="{{ $action->id }}">
-                            <input type="submit" value="Apagar" class="delete-btn">
+                            <input type="submit" value="Apagar" class="delete-btn" style="width:70px; height: 40px">
                         </form>
                     </div>
                 @endforeach
