@@ -27,23 +27,22 @@
         <div class="caixa">
             <form action="{{ route('finansee.index.post') }}" method="POST" class="preencher_dados">
                 @csrf
-                <input class="text" name="Description" placeholder="Descrição" required>
+                <div class="ls-custom-select">
+                    <select name="selected" class="ls-select" required>
+                        <option value="1">Ganhos</option>
+                        <option value="0" selected>Perdas</option>
+                    </select>
+                </div>
+                <input class="text" name="Description" placeholder="Descrição" maxlength="254" required>
                 <input class="number" name="Value" placeholder="Valor" required>
                 <input type="date" class="date" name="Date" placeholder="Data">
                 <input type="submit" class="submit" value="Inserir">
             </form>
         </div>
+
     <div class="result-section">
         <div class="result-box">
             <div class="result">
-
-            <div class="ls-custom-select">
-                <select name="" class="ls-select">
-                    <option>Selecione</option>
-                    <option>Ganhos</option>
-                    <option>Perdas</option>
-                </select>
-            </div>
 
                 <div class="result-gasto">
                     <h4>Salgadinho Doritos Sabor Queijo Nacho 300g</h4>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ControllerFinanSee extends Controller {
 
@@ -24,8 +25,21 @@ class ControllerFinanSee extends Controller {
         return view('Screen-FinanSee', compact('dados'));
     }
 
-    public function create () {
-        
+    public function create (Request $request) {
+
+        if($request->selected == 0) {
+            return $this->insertSpend($request->Description, $request->Value, $request->Date);
+        }
+        return "Ganho";
+    }
+
+    private function insertSpend ($text, $value, $date = null  ) {
+
+        DB::table('spends')->insert(
+            array(
+
+            )
+        );
     }
 
 }
