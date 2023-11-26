@@ -43,19 +43,15 @@
     <div class="result-section">
         <div class="result-box">
             <div class="result">
-
                 <div class="result-gasto">
                     <h4>Salgadinho Doritos Sabor Queijo Nacho 300g</h4>
                 </div>
-
-                    <div class="result-valor">
-                        <h4>R$22,99</h4>
-                    </div>
-
-                    <div class="result-data">
-                        <h4>14/11/2023</h4>
-                    </div>
-
+                <div class="result-valor">
+                    <h4>R$22,99</h4>
+                </div>
+                <div class="result-data">
+                    <h4>14/11/2023</h4>
+                </div>
                     <button class="refresh-btn">
                         <h4>Atualizar</h4>
                     </button>

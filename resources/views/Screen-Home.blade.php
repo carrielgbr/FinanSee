@@ -21,7 +21,7 @@
                     <input type="email" class="text" name="email" value="" placeholder="Login" maxlength="100" required>
                     <input type="password" class="number" name="password" value="" placeholder="Senha" maxlength="60" required>
 
-                    <a href="{{route('ForgotPassword.post')}}" class="forgotpass">Esqueceu a senha?</a>
+                    <a href="{{route('forget.password.post')}}" class="forgotpass">Esqueceu a senha?</a>
 
                     <input type="submit" class="submit" value="Entrar">
                     @if($auth === false)

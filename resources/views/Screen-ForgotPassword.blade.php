@@ -16,15 +16,15 @@
             <div class="logo">
                 Finan<span class="span-logo">See<span>
             </div>
-            <form action="{{route('ForgotPassword.post')}}" class="preencher_dados">
+            <form action="{{route('reset.password.post')}}" class="preencher_dados">
                 @csrf
                  <h3>Esqueceu sua senha?</h3> 
 
                  <h5>Insira seu email abaixo que te enviaremos um link de recuperação!</h5>
 
                  <input type="email" class="text" name="email" value="" placeholder="Seu email cadastrado">
-                 <button class="submit">Enviar link</button>
-                 <button class="sign-on">Enviar novamente</button>
+                 <input type="button" class="submit" value="Enviar link">
+                 <a href="route('reset.password.post')" class="sign-on">Enviar novamente</button>
              </form>
         </div>
     </div>
