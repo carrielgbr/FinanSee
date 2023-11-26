@@ -38,4 +38,6 @@ Route::post('/esqueceuasenha', [AuthenticationController::class, 'forgot'])->nam
 
 Route::get('/finansee', [ControllerFinanSee::class, 'index'])->name('finansee.index')->middleware('auth');
 Route::post('/finansee', [ControllerFinanSee::class, 'create'])->name('finansee.index.post')->middleware('auth');
+Route::post('/finansee/delete', [ControllerFinanSee::class, 'destroy'])->name('finansee.destroy')->middleware('auth');
+
 Route::get('/finansee/grafico', [ControllerFinanSee::class, 'exibirGrafico'])->name('finansee.grafico');

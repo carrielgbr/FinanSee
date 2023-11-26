@@ -29,8 +29,14 @@
                 @csrf
                 <div class="ls-custom-select">
                     <select name="selected" class="ls-select" required>
-                        <option value="1">Ganhos</option>
-                        <option value="0" selected>Perdas</option>
+                        <option value="1" 
+                            @if($selected == 1)
+                                selected
+                            @endif>Ganhos</option>
+                        <option value="0"
+                            @if($selected == 0)
+                                selected
+                            @endif>Perdas</option>
                     </select>
                 </div>
                 <input class="text" name="Description" placeholder="Descrição" maxlength="254" required>
@@ -40,29 +46,31 @@
             </form>
         </div>
 
-    <div class="result-section">
-        <div class="result-box">
-            <div class="result">
+        <div class="result-section">
+            <div class="result-box">
+                @foreach($actions as $action)
+                    <div class="result">
+                        <div class="result-gasto">
+                            <h4>{{ $action->description }}</h4>
+                        </div>
+                        <div class="result-valor">
+                            <h4>{{ $action->value }}</h4>
+                        </div>
+                        <div class="result-data">
+                            <h4>{{ $action->updated_at }}</h4>
+                        </div>
 
-                <div class="result-gasto">
-                    <h4>Salgadinho Doritos Sabor Queijo Nacho 300g</h4>
-                </div>
+                        <button class="refresh-btn">
+                            <h4>Atualizar</h4>
+                        </button>
 
-                    <div class="result-valor">
-                        <h4>R$22,99</h4>
+                        <form action="{{ route('finansee.destroy') }}" method="post">
+                            @csrf
+                            <input type="hidden" name="id" value="{{ $action->id }}">
+                            <input type="submit" value="Apagar" class="delete-btn">
+                        </form>
                     </div>
-
-                    <div class="result-data">
-                        <h4>14/11/2023</h4>
-                    </div>
-
-                    <button class="refresh-btn">
-                        <h4>Atualizar</h4>
-                    </button>
-                    <button class="delete-btn">
-                        <h4>Apagar</h4>
-                    </button>
-                </div>
+                @endforeach
             </div>
         </div>
 
