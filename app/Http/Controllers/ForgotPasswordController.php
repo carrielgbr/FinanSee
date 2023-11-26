@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use Illuminate\View\View;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\DB;
 
 class ForgotPasswordController extends Controller
 {
@@ -28,13 +29,13 @@ class ForgotPasswordController extends Controller
 
         $token = Str::random(64);
 
-        PasswordReset::create([
+        DB::table('password_resets_token')->create([
             'email' => $request->email, 
             'token' => $token, 
             'created_at' => Carbon::now()
         ]);
 
-        Mail::send('email.forgetPassword', ['token' => $token], function ($message) use ($request) {
+        Mail::send('Screen-ForgotPassword', ['token' => $token], function ($message) use ($request) {
             $message->to($request->email);
             $message->subject('Reset Password');
         });
@@ -44,7 +45,7 @@ class ForgotPasswordController extends Controller
 
     public function showResetPasswordForm($token): View
     { 
-        return view('auth.forgetPasswordLink', ['token' => $token]);
+        return view('Screen-ForgotPassword', ['token' => $token]);
     }
 
     public function submitResetPasswordForm(Request $request): RedirectResponse
@@ -55,10 +56,12 @@ class ForgotPasswordController extends Controller
             'password_confirmation' => 'required'
         ]);
 
-        $updatePassword = PasswordReset::where([
-            'email' => $request->email, 
-            'token' => $request->token
-        ])->first();
+        $updatePassword = DB::table('password_resets_token')
+                              ->where([
+                                'email' => $request->email, 
+                                'token' => $request->token
+                              ])
+                              ->first();
 
         if (!$updatePassword) {
             return back()->withInput()->with('error', 'Invalid token!');
@@ -67,7 +70,7 @@ class ForgotPasswordController extends Controller
         $user = User::where('email', $request->email)
             ->update(['password' => Hash::make($request->password)]);
 
-        PasswordReset::where(['email' => $request->email])->delete();
+        DB::table ('password_resets_token')->where(['email' => $request->email])->delete();
 
         return redirect('/Screen-Home')->with('message', 'Sua Senha FOi Trocada');
     }

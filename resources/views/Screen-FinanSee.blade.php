@@ -67,7 +67,7 @@
                         <form action="{{ route('finansee.destroy') }}" method="post">
                             @csrf
                             <input type="hidden" name="id" value="{{ $action->id }}">
-                            <input type="submit" value="Apagar" class="delete-btn">
+                            <input type="submit" value="Apagar" class="delete-btn" name="delete-btn">
                         </form>
                     </div>
                 @endforeach
