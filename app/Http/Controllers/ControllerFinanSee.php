@@ -86,11 +86,35 @@ class ControllerFinanSee extends Controller {
                 'created_at' => DB::raw('current_timestamp()'),
                 'updated_at' => $date,
                 'value' => $value,
-                'description' => $text,
                 'gain' => $gain,
+                'description' => $text,
                 'user_id' => $userId
             )
         );
         return $this->index();
+    }
+
+
+//atualizar conteudo 
+    public function updateLine(Request $request)
+    {
+        $request->validate([
+            'id' => 'required',
+            'selected' => 'required',
+            'Description' => 'required|max:254',
+            'Value' => 'required',
+            'Date' => 'required',
+        ]);
+
+        DB::table('actions')->where('id', $request->id)->update([
+            'created_at' => $request->Date,
+            'updated_at' => now(), // ou use Carbon::now() se preferir
+            'value' => $request->Value,
+            'gain' => $request->selected,
+            'description' => $request->Description,
+        ]);
+
+        return redirect()->route('finansee.index')->with('actions', $actions)->with('message', 'Item atualizado com sucesso.');
+
     }
 }

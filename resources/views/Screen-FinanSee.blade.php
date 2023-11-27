@@ -10,6 +10,26 @@
     <link rel="manifest" href="/site.webmanifest">
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
+    <!--testando grafico-->
+    <script type="text/javascript" action="finansee.index.post">
+                google.charts.load('current', {'packages':['corechart']});
+                google.charts.setOnLoadCallback(desenharGrafico);
+                function desenharGrafico() {
+                    var data = google.visualization.arrayToDataTable();
+
+                    // Imprime os dados no console para depuração
+                    console.log(data);
+
+                    var options = {
+                        title: 'My Daily Activities',
+                        is3D: true,
+                    };
+
+                    var chart = new google.visualization.ComboChart(document.getElementById('grafico'));
+                    chart.draw(data, options);
+                }
+            </script>
+            
 </head>
     <body>
         <header>
@@ -39,9 +59,9 @@
                             @endif>Perdas</option>
                     </select>
                 </div>
-                <input class="text" name="Description" placeholder="Descrição" maxlength="254" required>
-                <input class="number" name="Value" placeholder="Valor" required>
-                <input type="date" class="date" name="Date" placeholder="Data">
+                <input value=" {{ $action->description }}" class="text" name="Description" placeholder="Descrição" maxlength="254" required>
+                <input value=" {{ $action->value }}" class="number" name="Value" placeholder="Valor" required>
+                <input value=" {{ $action->update_at }}" type="date" class="date" name="Date" placeholder="Data">
                 <input type="submit" class="submit" value="Inserir">
             </form>
         </div>
@@ -75,7 +95,7 @@
                 @endforeach
             </div>
         </div>
-
+        
         <!-- teste grafico Kayky -->
         <div class="chart-section">
             <div class="chart-box"> 
