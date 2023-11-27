@@ -33,16 +33,12 @@ Route::post('/logout', [AuthenticationController::class, 'logout'])->name('logou
 Route::get('/cadastrar', [AuthenticationController::class, 'registerIndex'])->name('register.get');
 Route::post('/cadastrar', [AuthenticationController::class, 'create'])->name('register.post');
 
-//testando a senha 01
-//Route::get('/esqueceuasenha', [AuthenticationController::class, 'forgotpassword'])->name('ForgotPassword');
-//Route::post('/esqueceuasenha', [AuthenticationController::class, 'forgot'])->name('ForgotPassword.post');
 
 Route::get('/finansee', [ControllerFinanSee::class, 'index'])->name('finansee.index')->middleware('auth');
 Route::post('/finansee', [ControllerFinanSee::class, 'create'])->name('finansee.index.post')->middleware('auth');
 Route::post('/finansee/delete', [ControllerFinanSee::class, 'destroy'])->name('finansee.destroy')->middleware('auth');
 
-//grafico
-Route::get('/finansee/grafico', [ControllerFinanSee::class, 'exibirGrafico'])->name('finansee.grafico');
+
 
 //testando rota esqueceu a senha (Atual) 
 Route::get('esqueceuasenha', [ForgotPasswordController::class, 'showForgetPasswordForm'])->name('forget.password.get');
