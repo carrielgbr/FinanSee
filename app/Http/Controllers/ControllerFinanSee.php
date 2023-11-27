@@ -9,10 +9,10 @@ class ControllerFinanSee extends Controller {
     private $selected = null;
 
     public function index () {
-
-
+    
+    
         $actions = $this->show();
-
+    
         return view('Screen-FinanSee', [
             "selected" => $this->selected,
             "actions" => $actions
@@ -45,11 +45,30 @@ class ControllerFinanSee extends Controller {
         return $this->insertSpend($request->selected, $request->Description, $request->Value, $request->Date);
     }
 
+    public function update (Request $request) {
+
+        $date = $request->date;
+
+        if($date == null) {
+            $date = date('Y/m/d');
+        }
+
+        DB::table('actions')->where('actions.id', $request->id)->update(
+            array(
+                'updated_at' => $date,
+                'value' => $request->value,
+                'description' => $request->description
+            )
+        );
+        return redirect()->route('finansee.index');
+    }
+
     private function show () {
 
         return DB::table('actions')
             ->select('actions.id', 'actions.description', 'actions.value', 'actions.updated_at')
             ->orderBy('actions.updated_at', 'DESC')
+            ->where('actions.user_id', auth()->user()->id)
             ->get();
     }
 
@@ -64,16 +83,14 @@ class ControllerFinanSee extends Controller {
 
         DB::table('actions')->insert(
             array(
-                'created_at' => $date,
-                'updated_at' => DB::raw('current_timestamp()'),
+                'created_at' => DB::raw('current_timestamp()'),
+                'updated_at' => $date,
                 'value' => $value,
                 'description' => $text,
                 'gain' => $gain,
                 'user_id' => $userId
             )
         );
-
         return $this->index();
     }
-
 }

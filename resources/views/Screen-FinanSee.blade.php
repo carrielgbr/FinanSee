@@ -50,19 +50,22 @@
             <div class="result-box">
                 @foreach($actions as $action)
                     <div class="result">
-                        <div class="result-gasto">
-                            <h4>{{ $action->description }}</h4>
-                        </div>
-                        <div class="result-valor">
-                            <h4>{{ $action->value }}</h4>
-                        </div>
-                        <div class="result-data">
-                            <h4>{{ $action->updated_at }}</h4>
-                        </div>
+                        <form action="{{ route('finansee.update') }}" method="post">
+                            @csrf
+                            <div class="result-gasto">
+                                <input type="text" name="description" id="description" value="{{ $action->description }}">
+                            </div>
+                            <div class="result-valor">
+                                <input type="number" name="value" id="value" value="{{ $action->value }}">
+                            </div>
+                            <div class="result-data">
+                                {{ $action->updated_at }}
+                                <input type="date" name="date" id="date">
+                            </div>
+                            <input type="hidden" name="id" value="{{ $action->id }}">
+                            <input type="submit" value="Atualizar" class="refresh-btn"> 
+                        </form>
 
-                        <button class="refresh-btn">
-                            <h4>Atualizar</h4>
-                        </button>
                         <form action="{{ route('finansee.destroy') }}" method="post">
                             @csrf
                             <input type="hidden" name="id" value="{{ $action->id }}">

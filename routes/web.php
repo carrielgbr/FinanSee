@@ -40,6 +40,7 @@ Route::post('/cadastrar', [AuthenticationController::class, 'create'])->name('re
 Route::get('/finansee', [ControllerFinanSee::class, 'index'])->name('finansee.index')->middleware('auth');
 Route::post('/finansee', [ControllerFinanSee::class, 'create'])->name('finansee.index.post')->middleware('auth');
 Route::post('/finansee/delete', [ControllerFinanSee::class, 'destroy'])->name('finansee.destroy')->middleware('auth');
+Route::post('/finansee/update', [ControllerFinanSee::class, 'update'])->name('finansee.update')->middleware('auth');
 
 //grafico
 Route::get('/finansee/grafico', [ControllerFinanSee::class, 'exibirGrafico'])->name('finansee.grafico');
