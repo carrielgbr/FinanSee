@@ -8,28 +8,6 @@
     <link rel="icon" type="image/png" sizes="32x32" href="Image/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="Image/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-
-    <!--testando grafico-->
-    <script type="text/javascript" action="finansee.index.post">
-                google.charts.load('current', {'packages':['corechart']});
-                google.charts.setOnLoadCallback(desenharGrafico);
-                function desenharGrafico() {
-                    var data = google.visualization.arrayToDataTable();
-
-                    // Imprime os dados no console para depuração
-                    console.log(data);
-
-                    var options = {
-                        title: 'My Daily Activities',
-                        is3D: true,
-                    };
-
-                    var chart = new google.visualization.ComboChart(document.getElementById('grafico'));
-                    chart.draw(data, options);
-                }
-            </script>
-            
 </head>
     <body>
         <header>
@@ -96,7 +74,7 @@
             </div>
         </div>
         
-        <!-- teste grafico Kayky -->
+        <!-- teste grafico Kayky nao funcionando 
         <div class="chart-section">
             <div class="chart-box"> 
                 <div class="chart"> 
@@ -105,11 +83,6 @@
                 </div>
             </div>
         </div>
-        <div>
-            <script type="text/javascript">
-                google.charts.load('current', {'packages':['corechart']});
-                google.charts.setOnLoadCallback(desenharGrafico);
-            </script>
-        </div>
+         -->
     </body>
 </html>
