@@ -78,6 +78,7 @@ class ControllerFinanSee extends Controller {
             $date = date('Y/m/d');
         }
 
+        $newValue = str_replace(',', '.', $value);
         $userId = auth()->user()->id;
         $this->selected = $gain;
 
@@ -85,7 +86,7 @@ class ControllerFinanSee extends Controller {
             array(
                 'created_at' => DB::raw('current_timestamp()'),
                 'updated_at' => $date,
-                'value' => $value,
+                'value' => $newValue,
                 'gain' => $gain,
                 'description' => $text,
                 'user_id' => $userId

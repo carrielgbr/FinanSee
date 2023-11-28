@@ -60,9 +60,9 @@
                     </select>
                 </div>
                 <input type="text" class="text" name="Description" placeholder="Descrição" maxlength="254" required>
-                <input type="number" class="number" name="Value" placeholder="Valor" required>
+                <input type="number" class="number" id="Value1" name="Value" placeholder="Valor" required>
                 <input type="date" class="date" name="Date" placeholder="Data">
-                <input type="submit" class="submit" value="Inserir">
+                <input type="submit" class="submit" value="Inserir" id="sub1">
             </form>
         </div>
 
