@@ -114,7 +114,7 @@ class ControllerFinanSee extends Controller {
             'description' => $request->Description,
         ]);
 
-        return redirect()->route('finansee.index')->with('actions', $actions)->with('message', 'Item atualizado com sucesso.');
+        return redirect()->route('finansee.index')->with('actions')->with('message', 'Item atualizado com sucesso.');
 
     }
 }

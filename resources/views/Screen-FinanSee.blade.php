@@ -59,9 +59,9 @@
                             @endif>Perdas</option>
                     </select>
                 </div>
-                <input value=" {{ $action->description }}" class="text" name="Description" placeholder="Descrição" maxlength="254" required>
-                <input value=" {{ $action->value }}" class="number" name="Value" placeholder="Valor" required>
-                <input value=" {{ $action->update_at }}" type="date" class="date" name="Date" placeholder="Data">
+                <input type="text" class="text" name="Description" placeholder="Descrição" maxlength="254" required>
+                <input type="number" class="number" name="Value" placeholder="Valor" required>
+                <input type="date" class="date" name="Date" placeholder="Data">
                 <input type="submit" class="submit" value="Inserir">
             </form>
         </div>
