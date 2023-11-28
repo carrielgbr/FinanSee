@@ -37,9 +37,9 @@
                             @endif>Perdas</option>
                     </select>
                 </div>
-                <input  class="text" name="Description" placeholder="Descrição" maxlength="254" required>
-                <input  class="number" name="Value" placeholder="Valor" required>
-                <input  type="date" class="date" name="Date" placeholder="Data">
+                <input type="text" class="text" name="Description" placeholder="Descrição" maxlength="254" required>
+                <input type="number" class="number" name="Value" placeholder="Valor" required>
+                <input type="date" class="date" name="Date" placeholder="Data">
                 <input type="submit" class="submit" value="Inserir">
             </form>
         </div>
@@ -48,20 +48,22 @@
             <div class="result-box">
                 @foreach($actions as $action)
                     <div class="result">
-                        <div class="result-gasto">
-                            <h4>{{ $action->description }}</h4>
-                        </div>
-                        <div class="result-valor">
-                            <h4>{{ $action->value }}</h4>
-                        </div>
-                        <div class="result-data">
-                            <h4>{{ $action->updated_at }}</h4>
-                        </div>
-                        <!--fazendo atualização atualização-->
-                        <form action="" method="get">
-                            <input type="submit" class="refresh-btn" value="Atualizar">
+                        <form action="{{ route('finansee.update') }}" method="post">
+                            @csrf
+                            <div class="result-gasto">
+                                <input type="text" name="description" id="description" value="{{ $action->description }}">
+                            </div>
+                            <div class="result-valor">
+                                <input type="number" name="value" id="value" value="{{ $action->value }}">
+                            </div>
+                            <div class="result-data">
+                                {{ $action->updated_at }}
+                                <input type="date" name="date" id="date">
+                            </div>
+                            <input type="hidden" name="id" value="{{ $action->id }}">
+                            <input type="submit" value="Atualizar" class="refresh-btn"> 
                         </form>
-                        <!--atualizar aqui-->
+
                         <form action="{{ route('finansee.destroy') }}" method="post">
                             @csrf
                             <input type="hidden" name="id" value="{{ $action->id }}">
